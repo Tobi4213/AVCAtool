@@ -1,0 +1,35 @@
+{
+    "Assets": [
+        {
+            "ID": "ISR-400",
+            "Name": "Router Cisco ISR 400",
+            "Type": "Device",
+            "Embedded sensors": [],
+            "Embedded actuators": [],
+            "Embedded devices": ["Arduino Uno Pro Mini"],
+            "Energy source": "Aternative current",
+            "Inventoried": "Not apply",
+            "Firmware updates status": "Default",
+            "Configuration status": "Default",
+            "Reached end of life": "No",
+            "MQTT": "No",
+            "Encryption module": "No",
+            "Trusted communications": "No",
+            "Documented data": "Yes",
+            "Data storage encryption": "Not apply",
+            "Data storaged": "Not apply",
+            "Sensitive data": "Yes",
+            "Account audit": "Yes",
+            "Certificate-based authentication": "No",
+            "Root privilegies": "Yes",
+            "Password management": "Yes",
+            "Lockdown interfaces": "No",
+            "Password-restrict test interfaces": "No",
+            "Phisical protection": "No",
+            "Registered loggins": "No",
+            "Monitored events": "No",
+            "Wireless conection": "No",
+            "Zig-Bee": "No"
+        }
+    ]
+}

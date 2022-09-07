@@ -1,0 +1,60 @@
+Asset with ID: Asset ID can follow the next list of countermeasures: 
+1. Ch04V1C1; Configure IoT device to alert regarding low-battery
+2. Ch04V2C1; Monitor IoT node power levels for identifying increased battery drainage
+3. Ch05V1C1; Establish naming conventions for IoT devices and configure unique identifiers to each device
+4. Ch05V2C1; Develop a nomenclature for identifiers that contains a series of rules that are only known in the organization.
+5. Ch05V3C1; Deploy an inventory management system and record details about each IoT device in inventory.
+6. Ch05V4C1; Schedule a task to update the asset/inventory database at least quarterly.
+7. Ch06V1C1; Integrity protect firmware images of IoT devices.
+8. Ch06V2C1; Implement a secure staging system for over-the-air updates to protect from intrusion and malicious logic
+9. Ch07V1C1; Define and follow a quality change control and testing process with established baselines, testing, and release standards.
+10. Ch07V2C1; Implement a configuration management program that detects all modifications to IoT system configuration files
+11. Ch08V1C1; Review IoT inventories annually to identify products used within the enterprise that have reached or will reach end-of-life within the next year.
+12. Ch08V2C1; Check if vendor has not announced plans to discontinue support for the products or their associated services
+13. Ch09V1C1; Define authorized MQTT topics
+14. Ch09V2C1; create/enforce an access control list within the broker to restrict IoT devices from publishing content or subscribing to unauthorized message topics
+15. Ch09V3C1; Reduce the standard MQTT message size to limit an attackers ability to overload the system by sending large messages.
+16. Ch09V4C1; Encrypt all MQTT messages
+17. Ch09V5C1; Use certificates to authenticate MQTT transactions
+18. Ch10V1C1; Encrypt all transmission control protocol (TCP)-based communications
+19. Ch11V1C1; Configure IoT devices to drop new incoming communication attempts
+20. Ch12V1C1; Document data collected, processed, and stored within IoT systems
+21. Ch12V2C1; Label the data with tags (metadata) that can be used to identify data types flowing within the system.
+22. Ch13V1C1; After cataloging data within an IoT system, identify any locations and systems which store that data and apply data-at-rest encryption controls to those locations and systems.
+23. Ch14V1C1; Catalog ubications that data storage in the IoT system
+24. Ch14V2C1; Track the data lineage throughout the system as data is cleaned, reduced, modified, and aggregated.
+25. Ch15V1C1; Implement data security controls based on the classification of each data type
+26. Ch16V1C1; Take action to disable any accounts that are determined unnecessary—including those that are unauthorized and expired.
+27. Ch16V2C1; Audit user, administrator, service, and device accounts within the IoT system at least annually
+28. Ch17V1C1; Establish shorter-term operational certificates.
+29. Ch17V2C1; Establish a process for certificate revocation that includes required reporting channels, investigation methods, and authorities for approving/disapproving placement on the revocation list. 
+30. Ch17V3C1; Establish operational certificate lifetimes of no more than three years.
+31. Ch18V1C1; Do not run services with root privileges. Instead, require "run as/sudo" operations
+32. Ch18V2C1; Implement and assign privileged roles to system components and users
+33. Ch18V3C1; implement geofencing restrictions to monitor or control device location to collect location data for authorization decisions.
+34. Ch18V4C1; Limit applications and services that run with elevated access, such as administrative privileges.
+35. Ch19V1C1; Enforce minimum password complexity requirements for all IoT devices and associated services
+36. Ch19V2C1; Do not provision duplicate identities or passwords across multiple devices or product lines
+37. Ch19V3C1; Review and identify devices that contain default passwords and change those passwords immediately
+38. Ch19V4C1; When possible, implement mechanisms that allow for the update of passwords automatically.
+39. Ch20V1C1; Eliminate or lockdown unnecessary hardware features of IoT devices
+40. Ch20V2C1; Disable or password-restrict any USB port
+41. Ch21V1C1; Deploy devices that validate the software signature on firmware and its components before updating.
+42. Ch21V2C1; Disable or password-restrict any test interfaces
+43. Ch21V3C1; Disable or password-restrict any universal asynchronous receiver-transmitter (UART)
+44. Ch21V4C1; Disable or password-restrict any interfaces of general-purpose input/output
+45. Ch22V1C1; Deploy IoT devices that apply tamper protection for security-critical device components.
+46. Ch22V2C1; Tamper protections range from simple seals and/or locked covers to piezo-electric circuits
+47. Ch22V3C1; Tamper protection depending on the threat environment
+48. Ch23V1C1; Implement monitoring rules to detect multiple IoT device authentications when they have identical identity credentials.
+49. Ch23V2C1; Define security-relevant events to include elevation of privilege attempts, successful/unsuccessful firmware update events, configuration changes to IoT devices and service software, account modifications, tamper events, etc.).
+50. Ch23V3C1; Log every failed remote access attempt
+51. Ch23V4C1; Restrict read access to security logs
+52. Ch24V1C1; Actively search for indicators of compromise, such as new botnet activity.
+53. Ch24V2C1; Monitor wired/wireless network communication to identify rogue devices and abnormal behavior.
+54. Ch24V3C1; Maintain an understanding of attacker types that typically target particular systems and their motivations.
+55. Ch25V1C1; Disable non-authenticated Bluetooth pairing procedures (e.g., Just Works).
+56. Ch25V2C1; Install near field communication (NFC) devices in locations that do not lend themselves to installing sniffers nearby.
+57. Ch25V3C1; Architect WSNs such as Zigbee, Z-Wave, LoRaWAN, and Bluetooth so that internet disconnection occurs with only authorized gateways exposing internet connectivity.
+58. Ch25V4C1; Scan geographic areas for jammers attempting to suppress radio frequency (RF) communications and execute incident response plans upon detecting such an event.
+59. Ch25V5C1; Encrypt all wireless communications within an IoT system.

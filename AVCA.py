@@ -1,0 +1,312 @@
+import json
+import csv
+
+class device: 
+    def __init__(self,id, name, type, energySource, inventoried, firmwareUpdateStatus, configurationStatus, reachedEndOfLife,
+                MQTT, encryptionModule, trustedCommunications, documentedData, dataStorageEncryption, dataStoraged, 
+                sensitiveData, accountAudit, certificateBasedAuthentication, rootPrivilegies,
+                passwordManagement, lockdownInterfaces, passwordRestrictedTestInterfaces, phisicalProtection, 
+                registeredLoggins, monitoredEvents, wirelessConection, zigBee, embeddedSensors, embeddedActuators, 
+                embeddedDevices):
+        self.id = id
+        self.name = name
+        self.type = type
+        self.energySource = energySource
+        self.inventoried = inventoried
+        self.firmwareUpdateStatus = firmwareUpdateStatus
+        self.configurationStatus = configurationStatus
+        self.reachedEndOfLife = reachedEndOfLife
+        self.MQTT = MQTT
+        self.encryptionModule = encryptionModule
+        self.trustedCommunications = trustedCommunications
+        self.documentedData = documentedData
+        self.dataStorageEncryption = dataStorageEncryption
+        self.dataStoraged = dataStoraged
+        self.sensitiveData = sensitiveData
+        self.accountAudit = accountAudit
+        self.certificateBasedAuthentication = certificateBasedAuthentication
+        self.rootPrivilegies = rootPrivilegies
+        self.passwordManagement = passwordManagement
+        self.lockdownInterfaces = lockdownInterfaces
+        self.passwordRestrictedTestInterfaces = passwordRestrictedTestInterfaces
+        self.phisicalProtection = phisicalProtection
+        self.registeredLoggins = registeredLoggins
+        self.monitoredEvents = monitoredEvents
+        self.wirelessConection = wirelessConection
+        self.zigBee = zigBee
+        self.embeddedSensors = embeddedSensors
+        self.embeddedActuators = embeddedActuators
+        self.embeddedDevices = embeddedDevices
+        self.vulnerabilitiesFound = []
+        self.countermeasuresRecommended = []
+    def __del__(self):
+        pass
+
+def load_dict(path):
+    with open(path, 'r') as archivo:
+        dict = {}
+        separador = ':'    
+        for linea in archivo:
+            key,value = linea.split(separador)
+            key = eval(key)
+            values = eval(value)
+            dict[key] = values
+    return dict
+   
+def identify_vulnerabilities_and_countermeasures(secMetrics,assets,countermeasures):
+    for asset in assets:
+        metric = 'Energy source'
+        value = asset.energySource
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+        metric = 'Inventoried'
+        value = asset.inventoried 
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+        metric = 'Firmware updates status'
+        value = asset.firmwareUpdateStatus 
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+        metric = 'Configuration status'
+        value = asset.configurationStatus
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+        metric = 'Reached end of life'
+        value = asset.reachedEndOfLife
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+        metric = 'MQTT'
+        value = asset.MQTT
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+        metric = 'Encryption module'
+        value = asset.encryptionModule
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+        metric = 'Trusted communications'
+        value = asset.trustedCommunications
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+        metric = 'Documented data'
+        value = asset.documentedData
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+        metric = 'Data storage encryption'
+        value = asset.dataStorageEncryption
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+        metric = 'Data storaged'
+        value = asset.dataStoraged
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+        metric = 'Sensitive data'
+        value = asset.sensitiveData
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+        metric = 'Account audit'
+        value = asset.accountAudit 
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+        metric = 'Certificate-based authentication'
+        value = asset.certificateBasedAuthentication
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+        metric = 'Root privilegies'
+        value = asset.rootPrivilegies
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+        metric = 'Password management'
+        value = asset.passwordManagement
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+        metric = 'Lockdown interfaces'
+        value = asset.lockdownInterfaces
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+        metric = 'Password-restrict test interfaces'
+        value = asset.passwordRestrictedTestInterfaces
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+        metric = 'Phisical protection'
+        value = asset.phisicalProtection
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+        metric = 'Registered loggins'
+        value = asset.registeredLoggins
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+        metric = 'Monitored events'
+        value = asset.monitoredEvents
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+        metric = 'Wireless conection'
+        value = asset.wirelessConection
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+        metric = 'Zig-Bee'
+        value = asset.zigBee
+        if (metric,value) in secMetrics:
+            asset.vulnerabilitiesFound.append(secMetrics[metric,value])
+            asset.countermeasuresRecommended.append(countermeasures[metric,value])
+
+def generate_vulnerability_archive(path,assets):
+    i = 1
+    archivo = open(path,"w")
+    for asset in assets:
+        archivo.writelines("Asset with ID: ")
+        archivo.writelines(asset.id)
+        archivo.writelines(" has the following vulnerabilities:")
+        archivo.writelines("\n")
+        for line in asset.vulnerabilitiesFound:
+            for element in line:
+                archivo.writelines(str(i))
+                archivo.writelines(". ")
+                archivo.writelines(element)
+                archivo.writelines("\n")
+                i += 1
+        i = 1
+    archivo.close()
+    print("The vulnerability analysis file is saved in: ",path)
+
+def generate_countermeasures_archive(path,assets):
+    i = 1
+    archivo = open(path,"w")
+    for asset in assets:
+        archivo.writelines("Asset with ID: ")
+        archivo.writelines(asset.id)
+        archivo.writelines(" can follow the next list of countermeasures: ")
+        archivo.writelines("\n")
+        for line in asset.countermeasuresRecommended:
+            for element in line:
+                archivo.writelines(str(i))
+                archivo.writelines(". ")
+                archivo.writelines(element)
+                archivo.writelines("\n")
+                i += 1
+        i = 1
+    archivo.close()
+    print("The countermeasures recommended file is saved in: ",path)
+
+def construct_network_edges(assets):
+    networkGraph = [["source","target"]]
+    vulnera = [] 
+    count = []
+    for asset in assets:
+        for vulnerabilities in asset.vulnerabilitiesFound: 
+            for vulnerability in vulnerabilities:
+                vulnera.append(vulnerability)
+        for countermeasures in asset.countermeasuresRecommended:         
+            for countermeasure in countermeasures:
+                count.append(countermeasure)
+        for i in range(len(vulnera)):
+            identifierV, resto = vulnera[i].split(';')
+            identifierCh = identifierV[:4]
+            identifierC, rest = count[i].split(';')
+            #identifierV = eval(identifierV)
+                #identifierC = eval(identifierC)
+            provisionalList = []   
+            provisionalList.append(asset.id)
+            provisionalList.append(identifierCh)
+            networkGraph.append(provisionalList)
+            provisionalList = [] 
+            provisionalList.append(identifierCh)
+            provisionalList.append(identifierV)
+            networkGraph.append(provisionalList)
+            provisionalList = []   
+            provisionalList.append(identifierV)
+            provisionalList.append(identifierC)
+            networkGraph.append(provisionalList)        
+    return networkGraph
+
+def generate_three_layer_model_file(path,nodes):
+    myFile = open(path, 'w', newline="")
+    with myFile:
+        writer = csv.writer(myFile)
+        writer.writerows(nodes)
+    print("Security visual representation CSV file has to be modelled in Gephi software. Consult ViLanIoT SecAnalizer user guide for more information.")
+
+#Main function starts below
+path = input("Enter file path: ")
+assets = []
+
+with open(path) as file:
+    data = json.load(file)
+    for asset in data['Assets']:
+        name = asset['Name']
+        id = asset['ID']
+        type = asset['Type']
+        energySource = asset['Energy source']
+        inventoried = asset['Inventoried']
+        firmwareUpdateStatus = asset['Firmware updates status']
+        configurationStatus = asset['Configuration status']
+        reachedEndOfLife = asset['Reached end of life']
+        MQTT = asset['MQTT']
+        encryptionModule = asset['Encryption module']
+        trustedCommunications = asset['Trusted communications']
+        documentedData = asset['Documented data']
+        dataStorageEncryption = asset['Data storage encryption']
+        dataStoraged = asset['Data storaged']
+        sensitiveData = asset['Sensitive data']
+        accountAudit = asset['Account audit']
+        certificateBasedAuthentication = asset['Certificate-based authentication']
+        rootPrivilegies = asset['Root privilegies']
+        passwordManagement = asset['Password management']
+        lockdownInterfaces = asset['Lockdown interfaces']
+        passwordRestrictedTestInterfaces = asset['Password-restrict test interfaces']
+        phisicalProtection = asset['Phisical protection']
+        registeredLoggins = asset['Registered loggins']
+        monitoredEvents = asset['Monitored events']
+        wirelessConection = asset['Wireless conection']
+        zigBee = asset['Zig-Bee']
+        embeddedSensors = asset['Embedded sensors']
+        embeddedActuators = asset['Embedded actuators']
+        embeddedDevices = asset['Embedded devices']
+        element = device(id, name, type, energySource, inventoried, firmwareUpdateStatus, configurationStatus, reachedEndOfLife,
+                        MQTT, encryptionModule, trustedCommunications, documentedData, dataStorageEncryption, dataStoraged, 
+                        sensitiveData, accountAudit, certificateBasedAuthentication, rootPrivilegies,
+                        passwordManagement, lockdownInterfaces, passwordRestrictedTestInterfaces, phisicalProtection, 
+                        registeredLoggins, monitoredEvents, wirelessConection, zigBee, embeddedSensors, embeddedActuators, 
+                        embeddedDevices)
+        assets.append(element)
+
+path = input("Enter security controls file path: ")
+secMetrics = load_dict(path)
+path = input("Enter countermeasures file path: ")
+countermeasures = load_dict(path)
+identify_vulnerabilities_and_countermeasures(secMetrics,assets,countermeasures)
+path = input("Enter path for saving vulnerability analysis file: ")
+generate_vulnerability_archive(path,assets)
+path = input("Enter path for saving countermeasures recommended file: ")
+generate_countermeasures_archive(path,assets)
+networkGraph = construct_network_edges(assets)
+path = input("Enter path for saving security visual representation file: ")
+generate_three_layer_model_file(path,networkGraph)
+
+#C:\\Users\\brand\\Documents\\Maestria\\Tesis\\Software\\Archivos\\Case2.json
+#C:\\Users\\brand\\Documents\\Maestria\\Tesis\\Software\\Archivos\\SecurityControls.txt
+#C:\\Users\\brand\\Documents\\Maestria\\Tesis\\Software\\Archivos\\Countermeasures.txt
+#C:\\Users\\brand\\Documents\\Maestria\\Tesis\\Software\\Archivos\\VulnerabilityAnalysis.txt
+#C:\\Users\\brand\\Documents\\Maestria\\Tesis\\Software\\Archivos\\CountermeasuresRecommended.txt
+#C:\\Users\\brand\\Documents\\Maestria\\Tesis\\Software\\Archivos\\SecurityVisualRepresentation.csv
